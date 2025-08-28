@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coastal Grooves | Products</title>
+<style>
+    body { font-family: Arial; background:#0D0D0D; color:#fff; margin:0; padding:0; }
+    header { padding:20px; text-align:center; background:#111; }
+    h1 { color:#FFD700; font-size:3rem; margin-bottom:10px; }
+    p { font-size:1.2rem; margin-bottom:40px; }
+    .products { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:50px 20px; }
+    .card { background:#1a1a1a; padding:20px; border-radius:20px; width:200px; text-align:center; transition:0.3s; }
+    .card:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,255,255,0.4); }
+    .card img { width:150px; height:150px; margin-bottom:10px; border-radius:15px; }
+    .btn { display:inline-block; padding:10px 20px; background:#00FFFF; color:#000; border:none; border-radius:20px; cursor:pointer; text-decoration:none; transition:0.3s; }
+    .btn:hover { background:#FFD700; color:#000; }
+    footer { text-align:center; padding:30px; background:#111; margin-top:50px; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Coastal Grooves</h1>
+    <p>Refresh yourself with our premium drinks!</p>
+</header>
+
+<section class="products">
+    <!-- Product Cards with Order Buttons -->
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Berry+Blast" alt="Berry Blast">
+        <h3>Berry Blast</h3>
+        <button class="btn" onclick="openOrder('Berry Blast', 3, 1)">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Citrus+Spark" alt="Citrus Spark">
+        <h3>Citrus Spark</h3>
+        <button class="btn" onclick="openOrder('Citrus Spark', 3.5, 2)">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Mango+Tango" alt="Mango Tango">
+        <h3>Mango Tango</h3>
+        <button class="btn" onclick="openOrder('Mango Tango', 4, 1)">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Peach+Paradise" alt="Peach Paradise">
+        <h3>Peach Paradise</h3>
+        <button class="btn" onclick="openOrder('Peach Paradise', 3.5, 1)">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Cherry+Chill" alt="Cherry Chill">
+        <h3>Cherry Chill</h3>
+        <button class="btn" onclick="openOrder('Cherry Chill', 3, 2)">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Blueberry+Breeze" alt="Blueberry Breeze">
+        <h3>Blueberry Breeze</h3>
+        <button class="btn" onclick="openOrder('Blueberry Breeze', 3.5, 1)">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Watermelon+Wave" alt="Watermelon Wave">
+        <h3>Watermelon Wave</h3>
+        <button class="btn" onclick="openOrder('Watermelon Wave', 3, 1)">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Grape+Glow" alt="Grape Glow">
+        <h3>Grape Glow</h3>
+        <button class="btn" onclick="openOrder('Grape Glow', 3.5, 2)">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Lemon+Light" alt="Lemon Light">
+        <h3>Lemon Light</h3>
+        <button class="btn" onclick="openOrder('Lemon Light', 3, 1)">Order Now</button>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150?text=Apple+Aura" alt="Apple Aura">
+        <h3>Apple Aura</h3>
+        <button class="btn" onclick="openOrder('Apple Aura', 3.5, 1)">Order Now</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Coastal Grooves Food & Beverages | All Rights Reserved</p>
+</footer>
+
+<script>
+function openOrder(product, price, quantity) {
+    const newTab = window.open("", "_blank");
+    newTab.document.write(`
+        <html>
+        <head>
+            <title>Order - ${product}</title>
+            <style>
+                body { font-family: Arial; background:#0D0D0D; color:#fff; text-align:center; padding:50px;}
+                table { margin:0 auto; border-collapse: collapse; width:60%; }
+                th, td { border:1px solid #fff; padding:15px; }
+                th { background:#FFD700; color:#000; }
+                td { background:#1a1a1a; }
+                h1 { color:#FFD700; margin-bottom:30px;}
+                .btn { display:inline-block; padding:10px 20px; background:#00FFFF; color:#000; border:none; border-radius:20px; cursor:pointer; text-decoration:none; margin-top:20px;}
+                .btn:hover { background:#FFD700; color:#000; }
+            </style>
+        </head>
+        <body>
+            <h1>Order Details</h1>
+            <table>
+                <tr><th>Product</th><th>Price</th><th>Quantity</th></tr>
+                <tr><td>${product}</td><td>$${price}</td><td>${quantity}</td></tr>
+            </table>
+            <button class="btn" onclick="window.close()">Close Tab</button>
+        </body>
+        </html>
+    `);
+}
+</script>
+
+</body>
+</html>
